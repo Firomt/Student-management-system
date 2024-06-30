@@ -126,3 +126,42 @@ Student* deletefirststudent(Student*& head)
     return head;
 
 }
+
+void deletestudent(Student*&head){
+
+    Student*temp1=head;
+    int studID;
+    cout<<"please enter the ID of the student to be deleted: "<<endl;
+    cin>>studID;
+    if(head->ID==studID){
+        head=deletefirststudent(head);
+        cout<<"Student record deleted successfully! "<<endl;
+         return;
+    }
+
+
+    bool found = false;
+
+    while(temp1!=NULL){
+            if(temp1->ID==studID){
+                found=true;
+                break;
+            }
+        temp1=temp1->next;
+    }
+
+
+   if (found) {
+        if (temp1->prev != NULL) {
+            temp1->prev->next = temp1->next;
+        }
+        if (temp1->next != NULL) {
+            temp1->next->prev = temp1->prev;
+        }
+        delete temp1;
+        cout << "Student record deleted successfully!" << endl;
+    } else {
+        cout << "Student with the given ID is not found!" << endl;
+    }
+   
+}
