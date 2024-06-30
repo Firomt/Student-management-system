@@ -112,3 +112,17 @@ Student* storestudentrecord(Student*head,string name,int ID,string grade){
         cout<<"Student with the given ID is not found! "<<endl;
     }
 }
+
+Student* deletefirststudent(Student*& head)
+ {
+    if (head != NULL) {
+        Student* temp = head;
+        head = head->next;
+        if (head != NULL) {
+            head->prev = NULL;
+        }
+        delete temp;
+    }
+    return head;
+
+}
