@@ -55,3 +55,28 @@ Student* storestudentrecord(Student*head,string name,int ID,string grade){
 
     return head;
 }
+
+  void searchstudent(Student* head) {
+    int studID;
+    cout << "Please enter the student ID to be searched: "<<endl;
+    cin >> studID;
+
+    Student* temp1 = head;
+    bool found = false;
+
+    while (temp1 != NULL) {
+        if (temp1->ID == studID) {
+            found = true;
+            break;
+        }
+        temp1 = temp1->next;
+    }
+
+    if (found) {
+        cout << "Student Found! Student information is as follows:" << endl;
+        cout << "Name: " << temp1->name << ", ID: " << temp1->ID << ", grade: " << temp1->grade << endl;
+    } else {
+        cout << "Student with ID " << studID << " not found." << endl;
+    }
+   
+}
