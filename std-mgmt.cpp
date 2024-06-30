@@ -165,3 +165,18 @@ void deletestudent(Student*&head){
     }
    
 }
+
+ void displaystudent(Student*head){
+        Student*temp1=head;
+        if(head==NULL){
+            cout<<"no Student record found"<<endl;
+        }
+        while(temp1!=NULL){
+            cout<<"Name:"<<temp1->name<<", ID: "<<temp1->ID<<", Grade: "<<temp1->grade<<endl;
+            temp1=temp1->next;
+
+        }
+      
+
+
+    }
