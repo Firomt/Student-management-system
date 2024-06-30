@@ -180,3 +180,68 @@ void deletestudent(Student*&head){
 
 
     }
+
+    int main(){
+      Student*head=NULL;
+      
+       head= storestudentrecord(head,"firo",11,"A");
+       head= storestudentrecord(head,"john",12,"B");
+       head= storestudentrecord(head,"abebe",13,"A+");
+       head= storestudentrecord(head,"chala",14,"B+");
+       head= storestudentrecord(head,"Daniel",15,"C+");
+       head= storestudentrecord(head,"Gemechu",16,"D");
+       head= storestudentrecord(head,"Nati",17,"F");
+       head= storestudentrecord(head,"Bona",18,"B+");
+       head= storestudentrecord(head,"Hailu",19,"C");
+       head= storestudentrecord(head,"Habtamu",20,"B");
+       
+
+       int choice;
+       while(1){
+        cout << "\n*****************----- WELCOME TO STUDENT MANAGEMENT SYSTEM -----**********" << endl;
+        cout << "1. Display Students" << endl;
+        cout << "2. Add New Student"<<endl;
+        cout << "3. Search Student" << endl;
+        cout << "4. Edit Student" << endl;
+        cout << "5. Delete Student" << endl;
+        cout << "6. Exit" << endl;
+        cout << "Please Enter your choice: ";
+        
+        cin >> choice;
+        switch(choice){
+        case 1:
+            displaystudent(head);
+            break;
+        case 2:
+            head = addNewStudent(head);
+             break;
+        case 3:
+           searchstudent(head);
+            break;
+        case 4:
+            editStudent(head);
+            break;
+        case 5:
+             deletestudent(head);
+            break;
+        case 6:
+            cout << "Exiting program.......Exited!" << endl;
+
+                exit(0);
+        default:
+                cout << "Invalid choice. Please try again." << endl;
+                break;
+        }
+
+
+
+
+
+
+        }
+
+        return 0;
+       }
+
+
+
