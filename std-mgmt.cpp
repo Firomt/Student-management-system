@@ -80,3 +80,35 @@ Student* storestudentrecord(Student*head,string name,int ID,string grade){
     }
    
 }
+
+ void editStudent(Student*head)
+{
+    Student*temp1=head;
+    int studID;
+    string newgrade;
+
+    cout<<"please enter the Student ID for whom record is edited: "<<endl;
+    cin>>studID;
+    bool found = false;
+    if(head==NULL){
+        cout<<"student not found!"<<endl;
+        //return;
+    }
+    while (temp1 != NULL) {
+        if (temp1->ID == studID) {
+            found = true;
+            break;
+        }
+        temp1=temp1->next;
+    }
+    if(found){
+     cout<<"please enter the new grade of the student "<<endl;
+     cin>>newgrade;
+     temp1->grade=newgrade;
+     cout<<"the student's grade is updated to the new grade successfully! the new updated student record is as follows "<<endl;
+     cout<<"Name: "<<temp1->name<<", ID:"<<temp1->ID<<", grade:"<<temp1->grade<<endl;
+    }
+    else{
+        cout<<"Student with the given ID is not found! "<<endl;
+    }
+}
