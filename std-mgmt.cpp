@@ -34,3 +34,24 @@ Student* storestudentrecord(Student*head,string name,int ID,string grade){
 
     }
     return head;}
+
+     Student* addNewStudent(Student* head) {
+    string name, grade;
+    int ID;
+
+    cout << "Enter the name of the student: \n";
+   
+    cin>>name;
+
+    cout << "Enter the ID of the student:\n ";
+    cin >> ID;
+
+    cout << "Enter the grade of the student:\n ";
+    cin >> grade;
+
+    head = storestudentrecord(head, name, ID, grade);
+
+    cout << "Student record added successfully!" << endl;
+
+    return head;
+}
